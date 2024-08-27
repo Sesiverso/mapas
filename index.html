@@ -1,128 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Interativo dos Biomas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e0f7e9;
-            color: #333;
-            text-align: center;
-            position: relative;
-            margin: 0;
-            padding: 20px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-
-        #map-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        #mapa-brasil {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .bioma {
-            position: absolute;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .bioma:hover {
-            transform: scale(1.1);
-        }
-
-        .curiosidade {
-            display: none;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 0.9em;
-            color: #333;
-            text-align: left;
-            width: 200px;
-        }
-
-        .curiosidade h3 {
-            margin: 0;
-            font-size: 1.2em;
-            color: #4CAF50;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mapa Interativo dos Biomas</h1>
-    <div id="map-container">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/012/628/335/small_2x/hand-drawn-of-brazil-3d-map-png.png" id="mapa-brasil" alt="Mapa do Brasil">
+    <div class="container">
+        <h1>Mapa Interativo dos Biomas</h1>
+        <div class="map-container">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/012/628/335/small_2x/hand-drawn-of-brazil-3d-map-png.png" alt="Mapa do Brasil" class="map">
+            
+            <!-- Pampas -->
+            <div class="bioma pampa" onclick="showInfo('pampa')">
+                <img src="https://i.pinimg.com/originals/b4/32/d1/b432d14213c8ad610c2766fe4a3cd326.png" alt="Pampa">
+            </div>
 
-        <!-- Posicionamento dos biomas -->
-        <img src="https://i.pinimg.com/originals/b4/32/d1/b432d14213c8ad610c2766fe4a3cd326.png" 
-             class="bioma" style="width: 40px; left: 80px; top: 370px;" 
-             data-curiosidade="Os Pampas são conhecidos por suas vastas planícies e pela presença de gramíneas altas.">
-        
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Fbr%2Ficone-gratis%2Farvore_490091&psig=AOvVaw163BcLWZ6uYYUkknhJ9pcU&ust=1724866041516000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICrgO_YlYgDFQAAAAAdAAAAABAE" 
-             class="bioma" style="width: 40px; left: 240px; top: 400px;" 
-             data-curiosidade="A Mata Atlântica abriga uma rica biodiversidade e espécies endêmicas.">
-        
-        <img src="https://cdn-icons-png.flaticon.com/512/1670/1670005.png" 
-             class="bioma" style="width: 40px; left: 150px; top: 190px;" 
-             data-curiosidade="A Floresta Amazônica é a maior floresta tropical do mundo e é crucial para o clima global.">
-        
-        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" 
-             class="bioma" style="width: 40px; left: 180px; top: 300px;" 
-             data-curiosidade="A Caatinga é o único bioma exclusivamente brasileiro e é caracterizado por sua vegetação adaptada à seca.">
-        
-        <img src="https://origamiami.com/wp-content/uploads/2021/09/vitoria-regia-1.png" 
-             class="bioma" style="width: 40px; left: 160px; top: 340px;" 
-             data-curiosidade="O Pantanal é a maior planície inundável do mundo, famosa por sua biodiversidade aquática.">
-        
-        <img src="https://miro.medium.com/v2/resize:fit:380/1*iOM4-WIUZSn97EZvWtVl0Q.png" 
-             class="bioma" style="width: 40px; left: 190px; top: 260px;" 
-             data-curiosidade="O Cerrado é conhecido como a savana brasileira, com uma rica flora adaptada ao fogo e à seca.">
+            <!-- Mata Atlântica -->
+            <div class="bioma mata-atlantica" onclick="showInfo('mata-atlantica')">
+                <img src="https://cdn-icons-png.flaticon.com/512/490/490091.png" alt="Mata Atlântica">
+            </div>
+
+            <!-- Amazônia -->
+            <div class="bioma amazonia" onclick="showInfo('amazonia')">
+                <img src="https://cdn-icons-png.flaticon.com/512/1670/1670005.png" alt="Amazônia">
+            </div>
+
+            <!-- Cerrado -->
+            <div class="bioma cerrado" onclick="showInfo('cerrado')">
+                <img src="https://miro.medium.com/v2/resize:fit:380/1*iOM4-WIUZSn97EZvWtVl0Q.png" alt="Cerrado">
+            </div>
+
+            <!-- Caatinga -->
+            <div class="bioma caatinga" onclick="showInfo('caatinga')">
+                <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" alt="Caatinga">
+            </div>
+
+            <!-- Pantanal -->
+            <div class="bioma pantanal" onclick="showInfo('pantanal')">
+                <img src="https://origamiami.com/wp-content/uploads/2021/09/vitoria-regia-1.png" alt="Pantanal">
+            </div>
+        </div>
+
+        <div id="biome-info" class="info-box hidden">
+            <h2 id="biome-name"></h2>
+            <p id="biome-description"></p>
+        </div>
     </div>
 
     <script>
-        const biomas = document.querySelectorAll('.bioma');
+        function showInfo(biome) {
+            const infoBox = document.getElementById('biome-info');
+            const biomeName = document.getElementById('biome-name');
+            const biomeDescription = document.getElementById('biome-description');
 
-        biomas.forEach(bioma => {
-            bioma.addEventListener('click', function() {
-                const curiosidadeElement = document.createElement('div');
-                curiosidadeElement.classList.add('curiosidade');
+            let name = '';
+            let description = '';
 
-                const title = document.createElement('h3');
-                title.textContent = this.alt || "Curiosidade";
+            if (biome === 'pampa') {
+                name = 'Pampa';
+                description = 'Os Pampas são conhecidos por suas vastas planícies e pela presença de gramíneas altas.';
+            } else if (biome === 'mata-atlantica') {
+                name = 'Mata Atlântica';
+                description = 'A Mata Atlântica é rica em biodiversidade e possui uma grande variedade de plantas e animais.';
+            } else if (biome === 'amazonia') {
+                name = 'Amazônia';
+                description = 'A Amazônia é a maior floresta tropical do mundo e abriga uma enorme variedade de espécies.';
+            } else if (biome === 'cerrado') {
+                name = 'Cerrado';
+                description = 'O Cerrado é uma savana tropical caracterizada por árvores baixas e arbustos espaçados.';
+            } else if (biome === 'caatinga') {
+                name = 'Caatinga';
+                description = 'A Caatinga é uma região semiárida única, com vegetação adaptada a longos períodos de seca.';
+            } else if (biome === 'pantanal') {
+                name = 'Pantanal';
+                description = 'O Pantanal é a maior planície alagada do mundo e abriga uma vasta diversidade de vida selvagem.';
+            }
 
-                const text = document.createElement('p');
-                text.textContent = this.dataset.curiosidade;
+            biomeName.innerText = name;
+            biomeDescription.innerText = description;
 
-                curiosidadeElement.appendChild(title);
-                curiosidadeElement.appendChild(text);
-                document.body.appendChild(curiosidadeElement);
-
-                const rect = this.getBoundingClientRect();
-                curiosidadeElement.style.left = `${rect.left + window.scrollX}px`;
-                curiosidadeElement.style.top = `${rect.bottom + window.scrollY + 5}px`;
-
-                curiosidadeElement.style.display = 'block';
-
-                setTimeout(() => {
-                    document.body.removeChild(curiosidadeElement);
-                }, 4000); // Remove após 4 segundos
-            });
-        });
+            infoBox.classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
-
 
