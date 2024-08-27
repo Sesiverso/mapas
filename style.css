@@ -1,78 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e5ffe5;
+    font-family: 'Arial', sans-serif;
+    background-color: #d3f3d8;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.map-container {
+#map-container {
     position: relative;
-    width: 60%;
-    margin: 50px auto;
+    max-width: 600px;
 }
 
-.mapa {
+#mapa-brasil {
     width: 100%;
-    display: block;
+    height: auto;
 }
 
 .bioma {
     position: absolute;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.pampa {
-    left: 20%;
-    top: 80%;
-    width: 8%;
-}
-
-.mata-atlantica {
-    left: 45%;
-    top: 60%;
-    width: 7%;
-}
-
-.amazonia {
-    left: 30%;
-    top: 30%;
-    width: 9%;
-}
-
-.caatinga {
-    left: 50%;
-    top: 50%;
-    width: 6%;
-}
-
-.pantanal {
-    left: 38%;
-    top: 65%;
-    width: 9%;
-}
-
-.cerrado {
-    left: 42%;
-    top: 40%;
-    width: 10%;
-}
-
-.curiosidade {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #333;
-    padding: 10px;
-    border-radius: 5px;
-    display: none;
-    z-index: 10;
-    max-width: 200px;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 .bioma:hover {
     transform: scale(1.1);
 }
 
-.bioma:hover + #curiosidade {
-    display: block;
+.bioma img {
+    max-width: 50px;
+    max-height: 50px;
 }
+
+.curiosidade-container {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none;
+    width: 200px;
+    transform: translate(-50%, -100%);
+}
+
+.curiosidade-container h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #2e7d32;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.curiosidade-container p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Posicionamento dos biomas no mapa */
+.pampa { top: 75%; left: 25%; }
+.mata-atlantica { top: 80%; left: 50%; }
+.amazonica { top: 10%; left: 30%; }
+.caatinga { top: 40%; left: 55%; }
+.pantanal { top: 60%; left: 40%; }
+.cerrado { top: 50%; left: 45%; }
