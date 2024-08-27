@@ -31,36 +31,37 @@ body {
 }
 
 #pampa {
-    top: 80%;
-    left: 15%;
-}
-
-#mata-atlantica {
-    top: 65%;
-    left: 50%;
-    animation: sway 3s infinite ease-in-out;
-}
-
-#amazonica {
-    top: 20%;
-    left: 30%;
-    animation: sway 3s infinite ease-in-out;
-}
-
-#caatinga {
-    top: 45%;
+    top: 85%; /* Ajustado para posicionar corretamente dentro do mapa */
     left: 40%;
 }
 
 #pantanal {
-    top: 55%;
+    top: 60%; /* Ajustado para posicionar dentro do mapa */
     left: 35%;
 }
 
 #cerrado {
-    top: 50%;
-    left: 25%;
+    top: 55%; /* Leve ajuste para melhor posição */
+    left: 40%;
 }
+
+#caatinga {
+    top: 50%; /* Leve ajuste para melhor posição */
+    left: 50%;
+}
+
+#mata-atlantica {
+    top: 65%;
+    left: 75%;
+    animation: sway 3s infinite ease-in-out;
+}
+
+#amazonica {
+    top: 35%;
+    left: 40%;
+    animation: sway 3s infinite ease-in-out;
+}
+
 
 @keyframes sway {
     0%, 100% {
