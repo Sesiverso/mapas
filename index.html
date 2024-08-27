@@ -7,17 +7,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="map-container">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/012/628/335/small_2x/hand-drawn-of-brazil-3d-map-png.png" alt="Mapa do Brasil" class="mapa">
-        <img src="https://i.pinimg.com/originals/b4/32/d1/b432d14213c8ad610c2766fe4a3cd326.png" alt="Pampa" class="bioma pampa" onclick="mostrarCuriosidade(event, 'Curiosidade sobre o Pampa')">
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Fbr%2Ficone-gratis%2Farvore_490091&psig=AOvVaw163BcLWZ6uYYUkknhJ9pcU&ust=1724866041516000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICrgO_YlYgDFQAAAAAdAAAAABAE" alt="Mata Atlântica" class="bioma mata-atlantica" onclick="mostrarCuriosidade(event, 'Curiosidade sobre a Mata Atlântica')">
-        <img src="https://cdn-icons-png.flaticon.com/512/1670/1670005.png" alt="Amazônia" class="bioma amazonia" onclick="mostrarCuriosidade(event, 'Curiosidade sobre a Amazônia')">
-        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" alt="Caatinga" class="bioma caatinga" onclick="mostrarCuriosidade(event, 'Curiosidade sobre a Caatinga')">
-        <img src="https://origamiami.com/wp-content/uploads/2021/09/vitoria-regia-1.png" alt="Pantanal" class="bioma pantanal" onclick="mostrarCuriosidade(event, 'Curiosidade sobre o Pantanal')">
-        <img src="https://miro.medium.com/v2/resize:fit:380/1*iOM4-WIUZSn97EZvWtVl0Q.png" alt="Cerrado" class="bioma cerrado" onclick="mostrarCuriosidade(event, 'Curiosidade sobre o Cerrado')">
-    </div>
-    <div id="curiosidade" class="curiosidade"></div>
 
-    <script src="script.js"></script>
+<div id="map-container">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/012/628/335/small_2x/hand-drawn-of-brazil-3d-map-png.png" id="mapa-brasil" alt="Mapa do Brasil">
+
+    <!-- Biomas -->
+    <div class="bioma pampa">
+        <img src="https://i.pinimg.com/originals/b4/32/d1/b432d14213c8ad610c2766fe4a3cd326.png" alt="Pampa">
+        <div class="curiosidade-container">
+            <h2>Pampa</h2>
+            <p>O Pampa é conhecido por suas vastas planícies e rica biodiversidade, com uma fauna variada de aves e mamíferos.</p>
+        </div>
+    </div>
+    <div class="bioma mata-atlantica">
+        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" alt="Mata Atlântica">
+        <div class="curiosidade-container">
+            <h2>Mata Atlântica</h2>
+            <p>A Mata Atlântica é um dos biomas mais biodiversos do mundo, abrigando milhares de espécies endêmicas.</p>
+        </div>
+    </div>
+    <div class="bioma amazonica">
+        <img src="https://cdn-icons-png.flaticon.com/512/1670/1670005.png" alt="Amazônia">
+        <div class="curiosidade-container">
+            <h2>Amazônia</h2>
+            <p>A Amazônia é a maior floresta tropical do mundo e é responsável por cerca de 20% do oxigênio produzido na Terra.</p>
+        </div>
+    </div>
+    <div class="bioma caatinga">
+        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" alt="Caatinga">
+        <div class="curiosidade-container">
+            <h2>Caatinga</h2>
+            <p>A Caatinga é o único bioma exclusivamente brasileiro, com vegetação adaptada a longos períodos de seca.</p>
+        </div>
+    </div>
+    <div class="bioma pantanal">
+        <img src="https://origamiami.com/wp-content/uploads/2021/09/vitoria-regia-1.png" alt="Pantanal">
+        <div class="curiosidade-container">
+            <h2>Pantanal</h2>
+            <p>O Pantanal é a maior planície inundável do mundo e abriga uma das maiores concentrações de fauna da América do Sul.</p>
+        </div>
+    </div>
+    <div class="bioma cerrado">
+        <img src="https://miro.medium.com/v2/resize:fit:380/1*iOM4-WIUZSn97EZvWtVl0Q.png" alt="Cerrado">
+        <div class="curiosidade-container">
+            <h2>Cerrado</h2>
+            <p>O Cerrado é conhecido como a "savana brasileira" e é o segundo maior bioma do Brasil em extensão territorial.</p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
