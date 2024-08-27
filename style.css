@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7e0; /* Tons de verde */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.map-container {
+    position: relative;
+}
+
+.map {
+    width: 600px;
+    height: auto;
+    display: block;
+}
+
+.biome {
+    position: absolute;
+    transition: transform 0.3s ease, transform-origin 0.3s ease;
+}
+
+.biome-icon {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}
+
+#pampa {
+    top: 80%;
+    left: 15%;
+}
+
+#mata-atlantica {
+    top: 65%;
+    left: 50%;
+    animation: sway 3s infinite ease-in-out;
+}
+
+#amazonica {
+    top: 20%;
+    left: 30%;
+    animation: sway 3s infinite ease-in-out;
+}
+
+#caatinga {
+    top: 45%;
+    left: 40%;
+}
+
+#pantanal {
+    top: 55%;
+    left: 35%;
+}
+
+#cerrado {
+    top: 50%;
+    left: 25%;
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(2deg);
+    }
+}
