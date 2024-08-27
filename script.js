@@ -1,12 +1,30 @@
-const biomas = document.querySelectorAll('.bioma');
+// Palavras a serem encontradas
+const palavras = ["AMAZONIA", "CAATINGA", "CERRADO", "PANTANAL", "PAMPA", "MATAATLANTICA"];
+let palavraSelecionada = "";
 
-biomas.forEach(bioma => {
-    bioma.addEventListener('click', () => {
-        const curiosidade = bioma.querySelector('.curiosidade-container');
-        const allCuriosidades = document.querySelectorAll('.curiosidade-container');
-        
-        allCuriosidades.forEach(c => c.style.display = 'none');  // Esconder todas as curiosidades
-        
-        curiosidade.style.display = 'block';  // Mostrar curiosidade do bioma clicado
+// Selecionar letras
+document.querySelectorAll('td').forEach(celula => {
+    celula.addEventListener('click', function() {
+        this.classList.toggle('selected');
+        palavraSelecionada += this.textContent;
+
+        // Verificar se a palavra foi encontrada
+        if (palavras.includes(palavraSelecionada)) {
+            alert(`Você encontrou: ${palavraSelecionada}`);
+            palavraSelecionada = "";
+            document.querySelectorAll('td.selected').forEach(celula => {
+                celula.classList.remove('selected');
+            });
+        }
     });
 });
+
+// Limpar seleção ao clicar fora
+document.body.addEventListener('click', function(event) {
+    if (!event.target.closest('td')) {
+        palavraSelecionada = "";
+        document.querySelectorAll('td.selected').forEach(celula => {
+            celula.classList.remove('selected');
+        });
+    }
+}, true);
