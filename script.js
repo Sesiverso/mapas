@@ -1,12 +1,12 @@
-function mostrarCuriosidade(event, texto) {
-    const curiosidade = document.getElementById('curiosidade');
-    curiosidade.style.left = `${event.pageX}px`;
-    curiosidade.style.top = `${event.pageY - 50}px`;
-    curiosidade.innerText = texto;
-    curiosidade.style.display = 'block';
-    
-    // Remove a curiosidade após 3 segundos
-    setTimeout(() => {
-        curiosidade.style.display = 'none';
-    }, 3000);
-}
+const biomas = document.querySelectorAll('.bioma');
+
+biomas.forEach(bioma => {
+    bioma.addEventListener('click', () => {
+        const curiosidade = bioma.querySelector('.curiosidade-container');
+        const allCuriosidades = document.querySelectorAll('.curiosidade-container');
+        
+        allCuriosidades.forEach(c => c.style.display = 'none');  // Esconder todas as curiosidades
+        
+        curiosidade.style.display = 'block';  // Mostrar curiosidade do bioma clicado
+    });
+});
