@@ -1,73 +1,78 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #e0f7e0; /* Tons de verde */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    background-color: #e5ffe5;
+    margin: 0;
+    padding: 0;
 }
 
 .map-container {
     position: relative;
+    width: 60%;
+    margin: 50px auto;
 }
 
-.map {
-    width: 600px;
-    height: auto;
+.mapa {
+    width: 100%;
     display: block;
 }
 
-.biome {
+.bioma {
     position: absolute;
-    transition: transform 0.3s ease, transform-origin 0.3s ease;
-}
-
-.biome-icon {
-    width: 60px;
-    height: auto;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-#pampa {
-    top: 85%; /* Ajustado para posicionar corretamente dentro do mapa */
-    left: 40%;
+.pampa {
+    left: 20%;
+    top: 80%;
+    width: 8%;
 }
 
-#pantanal {
-    top: 60%; /* Ajustado para posicionar dentro do mapa */
-    left: 35%;
+.mata-atlantica {
+    left: 45%;
+    top: 60%;
+    width: 7%;
 }
 
-#cerrado {
-    top: 55%; /* Leve ajuste para melhor posição */
-    left: 40%;
+.amazonia {
+    left: 30%;
+    top: 30%;
+    width: 9%;
 }
 
-#caatinga {
-    top: 50%; /* Leve ajuste para melhor posição */
+.caatinga {
     left: 50%;
+    top: 50%;
+    width: 6%;
 }
 
-#mata-atlantica {
+.pantanal {
+    left: 38%;
     top: 65%;
-    left: 75%;
-    animation: sway 3s infinite ease-in-out;
+    width: 9%;
 }
 
-#amazonica {
-    top: 35%;
-    left: 40%;
-    animation: sway 3s infinite ease-in-out;
+.cerrado {
+    left: 42%;
+    top: 40%;
+    width: 10%;
 }
 
+.curiosidade {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    max-width: 200px;
+}
 
-@keyframes sway {
-    0%, 100% {
-        transform: translateX(0) rotate(0deg);
-    }
-    50% {
-        transform: translateX(5px) rotate(2deg);
-    }
+.bioma:hover {
+    transform: scale(1.1);
+}
+
+.bioma:hover + #curiosidade {
+    display: block;
 }
