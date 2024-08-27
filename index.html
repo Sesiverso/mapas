@@ -4,58 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Interativo dos Biomas</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7e9;
+            color: #333;
+            text-align: center;
+            position: relative;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        #map-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        #mapa-brasil {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .bioma {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .bioma:hover {
+            transform: scale(1.1);
+        }
+
+        .curiosidade {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 0.9em;
+            color: #333;
+            text-align: left;
+            width: 200px;
+        }
+
+        .curiosidade h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
+    <h1>Mapa Interativo dos Biomas</h1>
+    <div id="map-container">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/012/628/335/small_2x/hand-drawn-of-brazil-3d-map-png.png" id="mapa-brasil" alt="Mapa do Brasil">
 
-<div id="map-container">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/012/628/335/small_2x/hand-drawn-of-brazil-3d-map-png.png" id="mapa-brasil" alt="Mapa do Brasil">
+        <img src="https://i.pinimg.com/originals/b4/32/d1/b432d14213c8ad610c2766fe4a3cd326.png" 
+             class="bioma" style="width: 40px; left: 80px; top: 350px;" 
+             data-curiosidade="Os Pampas são conhecidos por suas vastas planícies e pela presença de gramíneas altas.">
+        
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Fbr%2Ficone-gratis%2Farvore_490091&psig=AOvVaw163BcLWZ6uYYUkknhJ9pcU&ust=1724866041516000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICrgO_YlYgDFQAAAAAdAAAAABAE" 
+             class="bioma" style="width: 40px; left: 150px; top: 300px;" 
+             data-curiosidade="A Mata Atlântica abriga uma rica biodiversidade e espécies endêmicas.">
+        
+        <img src="https://cdn-icons-png.flaticon.com/512/1670/1670005.png" 
+             class="bioma" style="width: 40px; left: 100px; top: 200px;" 
+             data-curiosidade="A Floresta Amazônica é a maior floresta tropical do mundo e é crucial para o clima global.">
+        
+        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" 
+             class="bioma" style="width: 40px; left: 190px; top: 240px;" 
+             data-curiosidade="A Caatinga é o único bioma exclusivamente brasileiro e é caracterizado por sua vegetação adaptada à seca.">
+        
+        <img src="https://origamiami.com/wp-content/uploads/2021/09/vitoria-regia-1.png" 
+             class="bioma" style="width: 40px; left: 120px; top: 310px;" 
+             data-curiosidade="O Pantanal é a maior planície inundável do mundo, famosa por sua biodiversidade aquática.">
+        
+        <img src="https://miro.medium.com/v2/resize:fit:380/1*iOM4-WIUZSn97EZvWtVl0Q.png" 
+             class="bioma" style="width: 40px; left: 160px; top: 280px;" 
+             data-curiosidade="O Cerrado é conhecido como a savana brasileira, com uma rica flora adaptada ao fogo e à seca.">
+    </div>
 
-    <!-- Biomas -->
-    <div class="bioma pampa">
-        <img src="https://i.pinimg.com/originals/b4/32/d1/b432d14213c8ad610c2766fe4a3cd326.png" alt="Pampa">
-        <div class="curiosidade-container">
-            <h2>Pampa</h2>
-            <p>O Pampa é conhecido por suas vastas planícies e rica biodiversidade, com uma fauna variada de aves e mamíferos.</p>
-        </div>
-    </div>
-    <div class="bioma mata-atlantica">
-        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" alt="Mata Atlântica">
-        <div class="curiosidade-container">
-            <h2>Mata Atlântica</h2>
-            <p>A Mata Atlântica é um dos biomas mais biodiversos do mundo, abrigando milhares de espécies endêmicas.</p>
-        </div>
-    </div>
-    <div class="bioma amazonica">
-        <img src="https://cdn-icons-png.flaticon.com/512/1670/1670005.png" alt="Amazônia">
-        <div class="curiosidade-container">
-            <h2>Amazônia</h2>
-            <p>A Amazônia é a maior floresta tropical do mundo e é responsável por cerca de 20% do oxigênio produzido na Terra.</p>
-        </div>
-    </div>
-    <div class="bioma caatinga">
-        <img src="https://cdn-icons-png.flaticon.com/512/892/892907.png" alt="Caatinga">
-        <div class="curiosidade-container">
-            <h2>Caatinga</h2>
-            <p>A Caatinga é o único bioma exclusivamente brasileiro, com vegetação adaptada a longos períodos de seca.</p>
-        </div>
-    </div>
-    <div class="bioma pantanal">
-        <img src="https://origamiami.com/wp-content/uploads/2021/09/vitoria-regia-1.png" alt="Pantanal">
-        <div class="curiosidade-container">
-            <h2>Pantanal</h2>
-            <p>O Pantanal é a maior planície inundável do mundo e abriga uma das maiores concentrações de fauna da América do Sul.</p>
-        </div>
-    </div>
-    <div class="bioma cerrado">
-        <img src="https://miro.medium.com/v2/resize:fit:380/1*iOM4-WIUZSn97EZvWtVl0Q.png" alt="Cerrado">
-        <div class="curiosidade-container">
-            <h2>Cerrado</h2>
-            <p>O Cerrado é conhecido como a "savana brasileira" e é o segundo maior bioma do Brasil em extensão territorial.</p>
-        </div>
-    </div>
-</div>
+    <script>
+        const biomas = document.querySelectorAll('.bioma');
 
-<script src="script.js"></script>
+        biomas.forEach(bioma => {
+            bioma.addEventListener('click', function() {
+                const curiosidadeElement = document.createElement('div');
+                curiosidadeElement.classList.add('curiosidade');
+
+                const title = document.createElement('h3');
+                title.textContent = this.alt || "Curiosidade";
+
+                const text = document.createElement('p');
+                text.textContent = this.dataset.curiosidade;
+
+                curiosidadeElement.appendChild(title);
+                curiosidadeElement.appendChild(text);
+                document.body.appendChild(curiosidadeElement);
+
+                const rect = this.getBoundingClientRect();
+                curiosidadeElement.style.left = `${rect.left + window.scrollX}px`;
+                curiosidadeElement.style.top = `${rect.bottom + window.scrollY + 5}px`;
+
+                curiosidadeElement.style.display = 'block';
+
+                setTimeout(() => {
+                    document.body.removeChild(curiosidadeElement);
+                }, 4000); // Remove após 4 segundos
+            });
+        });
+    </script>
 </body>
 </html>
+
