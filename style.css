@@ -1,97 +1,83 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0f7e9;
-    color: #333;
+    background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    overflow: hidden;
 }
 
 .container {
+    position: relative;
     text-align: center;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #2a7b42;
+    font-size: 2em;
+    color: #006400;
+    margin-bottom: 20px;
 }
 
-.map-container {
-    position: relative;
+.caça-palavras {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
     display: inline-block;
 }
 
-.map {
-    width: 250px; /* Diminuído para um tamanho mais compacto */
-    height: auto;
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
 }
 
-.bioma {
-    position: absolute;
+td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    border: 1px solid #ccc;
+    user-select: none;
 }
 
-.bioma img {
-    width: 30px; /* Imagens dos biomas menores */
+td.selected {
+    background-color: #90ee90;
+}
+
+.mato {
+    position: absolute;
+    width: 150px;
     height: auto;
+    cursor: pointer;
+    animation: sway 2s infinite;
 }
 
-.bioma:hover {
-    transform: scale(1.2);
+.mato-esquerdo {
+    bottom: 0;
+    left: 0;
 }
 
-/* Posição dos biomas */
-.pampa {
-    left: 45px;
-    top: 160px;
+.mato-direito {
+    bottom: 0;
+    right: 0;
 }
 
-.mata-atlantica {
-    left: 120px;
-    top: 180px;
-}
-
-.amazonia {
-    left: 85px;
-    top: 90px;
-}
-
-.cerrado {
-    left: 130px;
-    top: 150px;
-}
-
-.caatinga {
-    left: 140px;
-    top: 130px;
-}
-
-.pantanal {
-    left: 95px;
-    top: 210px;
-}
-
-.info-box {
-    margin-top: 20px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-}
-
-.hidden {
+.onca {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 200px;
     display: none;
 }
 
-#biome-name {
-    font-size: 1.5em;
-    color: #2a7b42;
-    margin-bottom: 10px;
+@keyframes sway {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
 }
 
-#biome-description {
-    font-size: 1em;
-    color: #333;
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(2); }
 }
 
